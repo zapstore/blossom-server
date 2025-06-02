@@ -14,6 +14,8 @@ import (
 	"github.com/nbd-wtf/go-nostr"
 )
 
+const limitInMB int = 600 * 1024 * 1024
+
 var (
 	config Config
 	db     *sqlite3.SQLite3Backend
@@ -55,6 +57,10 @@ func main() {
 }
 
 func rejectUpload(ctx context.Context, auth *nostr.Event, size int, ext string) (bool, string, int) {
+	if size > limitInMB {
+		return true, "blocked: max upload limit is 600MB", 400
+	}
+
 	level, err := getWhitelistLevel(context.Background(), auth.PubKey)
 	if err != nil {
 		log.Printf("Can't read the whitelist from db: %v\n", err)
