@@ -4,7 +4,7 @@ This Blossom server is developed for Zapstore to host applications executable an
 
 # How to run?
 
-You have to set environment variables defined in [the example file](./.env.example) first on the target system. Then you can build the project using:
+You have to set environment variables defined in [the example file](./.env.example) on a `.env` file with no prefixes in the same directory with executable. Then you can build the project using:
 
 ```sh
 go build .

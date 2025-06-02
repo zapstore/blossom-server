@@ -2,18 +2,24 @@ package main
 
 import (
 	"log"
+	"os"
 
-	"github.com/kelseyhightower/envconfig"
+	"github.com/joho/godotenv"
 )
 
 type Config struct {
-	WorkingDirectory string `envconfig:"WORKING_DIR"`
-	Port             string `envconfig:"PORT"`
+	WorkingDirectory string
+	Port             string
 }
 
 func LoadConfig() {
-	if err := envconfig.Process("", &config); err != nil {
-		log.Fatalf("failed to read from env: %s", err)
-		return
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+
+	config = Config{
+		WorkingDirectory: os.Getenv("WORKING_DIR"),
+		Port:             os.Getenv("PORT"),
 	}
 }
