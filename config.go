@@ -10,6 +10,7 @@ import (
 type Config struct {
 	WorkingDirectory string
 	Port             string
+	ServerURL        string
 }
 
 func LoadConfig() {
@@ -21,5 +22,6 @@ func LoadConfig() {
 	config = Config{
 		WorkingDirectory: os.Getenv("WORKING_DIR"),
 		Port:             os.Getenv("PORT"),
+		ServerURL:        os.Getenv("SERVER_URL"),
 	}
 }

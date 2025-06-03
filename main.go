@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"log"
 	"net/http"
 	"path"
@@ -27,6 +26,14 @@ func main() {
 
 	relay := khatru.NewRelay()
 
+	relay.RejectEvent = append(relay.RejectEvent, func(context.Context, *nostr.Event) (reject bool, msg string) {
+		return true, "blocked: not a relay"
+	})
+
+	relay.RejectFilter = append(relay.RejectFilter, func(context.Context, nostr.Filter) (reject bool, msg string) {
+		return true, "blocked: not a relay"
+	})
+
 	LoadConfig()
 
 	db = &sqlite3.SQLite3Backend{DatabaseURL: path.Join(config.WorkingDirectory, "database")}
@@ -43,7 +50,7 @@ func main() {
 
 	bs := disk.New(path.Join(config.WorkingDirectory, "blobs"))
 
-	bl := blossom.New(relay, fmt.Sprintf("http://localhost%s", config.Port))
+	bl := blossom.New(relay, config.ServerURL)
 	bl.Store = blossom.EventStoreBlobIndexWrapper{Store: db, ServiceURL: bl.ServiceURL}
 
 	bl.StoreBlob = append(bl.StoreBlob, bs.Store)

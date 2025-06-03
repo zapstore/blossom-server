@@ -1,3 +1,4 @@
 zapstore_wd/
 .env
 blossom-server
+*.apk
