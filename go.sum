@@ -34,8 +34,8 @@ github.com/fasthttp/websocket v1.5.12 h1:e4RGPpWW2HTbL3zV0Y/t7g0ub294LkiuXXUuTOU
 github.com/fasthttp/websocket v1.5.12/go.mod h1:I+liyL7/4moHojiOgUOIKEWm9EIxHqxZChS+aMFltyg=
 github.com/fiatjaf/eventstore v0.16.7 h1:QSDuOVkPdXKUQvITD/vz3qLwXhKgaVjPdZx1dQJEOpY=
 github.com/fiatjaf/eventstore v0.16.7/go.mod h1:cm7rn3an71pYrf5CFWhdHTeozvVh0urLun4ziWdvA+Y=
-github.com/fiatjaf/khatru v0.18.1 h1:3IK/pVL7D+b9+40Y87doF6utlJziOeGxDIkl0NlePaM=
-github.com/fiatjaf/khatru v0.18.1/go.mod h1:4KW6mom+7ajwrhj5IvLJTBKj6peV8bdZjU6XoDVrX2Q=
+github.com/fiatjaf/khatru v0.18.2-0.20250603213153-5705647c6b05 h1:vZA0N/On8oHgZ6M7IkpW+6cslgYdJdIUI4Ov4sUBA0M=
+github.com/fiatjaf/khatru v0.18.2-0.20250603213153-5705647c6b05/go.mod h1:4KW6mom+7ajwrhj5IvLJTBKj6peV8bdZjU6XoDVrX2Q=
 github.com/go-sql-driver/mysql v1.8.1 h1:LedoTUt/eveggdHS9qUFC1EFSa8bU2+1pZjSRpvNJ1Y=
 github.com/go-sql-driver/mysql v1.8.1/go.mod h1:wEBSXgmK//2ZFJyE+qWnIsVGmvmEKlqwuVSjsCm7DZg=
 github.com/google/go-cmp v0.6.0 h1:ofyhxvXcZhMsU5ulbFiLKl/XBFqE1GSq7atu8tAmTRI=

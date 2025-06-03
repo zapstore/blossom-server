@@ -6,7 +6,7 @@ toolchain go1.24.3
 
 require (
 	github.com/fiatjaf/eventstore v0.16.7
-	github.com/fiatjaf/khatru v0.18.1
+	github.com/fiatjaf/khatru v0.18.2-0.20250603213153-5705647c6b05
 	github.com/joho/godotenv v1.5.1
 	github.com/kehiy/blobstore v0.1.2
 	github.com/nbd-wtf/go-nostr v0.51.12

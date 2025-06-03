@@ -36,7 +36,7 @@ func main() {
 
 	LoadConfig()
 
-	db = &sqlite3.SQLite3Backend{DatabaseURL: path.Join(config.WorkingDirectory, "database")}
+	db = &sqlite3.SQLite3Backend{DatabaseURL: path.Join(config.WorkingDirectory, "database.sqlite")}
 	if err := db.Init(); err != nil {
 		log.Fatalf("can't init database: %v\n", err)
 	}
